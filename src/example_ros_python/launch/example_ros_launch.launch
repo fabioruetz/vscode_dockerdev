@@ -1,0 +1,8 @@
+<launch>
+
+    <node pkg="example_ros_python" type="node.py" name="example_ros_python" clear_params="true" output="screen">
+      <param name="param_1"  value="1"/>
+      
+    </node>
+
+</launch>

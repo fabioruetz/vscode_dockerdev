@@ -1,0 +1,12 @@
+build:
+  merge-install: true
+  symlink-install: true
+  cmake-args:
+    - "-GUnix Makefiles" # not using Ninja due to https://github.com/colcon/colcon-cmake/issues/118
+    - "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    - "-DCMAKE_CXX_STANDARD=17"
+    - "-DCMAKE_CXX_STANDARD_REQUIRED=YES"
+    - "-DCMAKE_POSITION_INDEPENDENT_CODE=ON"
+    - "-DSETUPTOOLS_DEB_LAYOUT=OFF"   # Turn off the setup tools deb layout
+  packages-skip:
+    - example
