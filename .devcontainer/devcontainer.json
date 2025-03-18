@@ -5,6 +5,9 @@
 		"dockerfile": "Dockerfile",
 		"context": "..",
 	},
+	"run":{
+		"image": "xxx",
+	},
 	"customizations": {
 		"vscode": {
 			"settings": {
