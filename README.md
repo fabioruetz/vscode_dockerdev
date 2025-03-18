@@ -6,14 +6,14 @@
 
 This is a *template* workspace for students. We development in *containers* to allow for reproduciable development and deployment. This is achieved by using docker, VsCode with the `Dev Container extension` and `NVIDIA Container Toolkit`. In essence, the workspace and your source code will be mounted in a running container, where you change and modify the source code. You also dont need to worry about the correct CUDA version on your host machine, matching or exceeding the host CUDA version required for your machine.
 
-Your developed pgk's go into the `src ` directory, either as submodules or as git packages. Add installation instructions somewhere. 
+Your developed pgk's go into the `src ` directory, either as submodules,as git packages.Add installation instructions somewhere. 
 
 
 # Quickstart:
 
 1. Clone the workspace to your desired directory on your local machine
    1. Remove the .git from the workspace and initialize your own git repo
-   2. Push it to your own project or repository
+   2. Create and push it to your own project or repository
   
 2. Install all the dependencies as shown in the installation 
 
@@ -23,6 +23,24 @@ Your developed pgk's go into the `src ` directory, either as submodules or as gi
 4. Update or modfiy docker file to include all dependencies. 
 5. Build and launch the container through `vscode`. Use `Ctr+Shft+P` to open the command window and type `Dev Container: Rebuild and Reopen Devcontainer`, will autocomplete if the extension is installed.
 6. Start developing
+
+# Worskpace Overview:
+``` bash
+worskpace_root
+├── .vscode
+├── .devcontainer
+├── .git
+├── data
+├── documents
+├── .gitignore
+├── README.md
+└── src
+    └── awsome_pkg
+```
+- "Workspace Root" or "workspacee directory" refers to the root or origin of this workspace
+- `.devcontainer`: Used for devcontainer[here](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) configuration and Docker file
+- `src` this is where you pkgs should go. 
+
 
 # Installation:
 
@@ -91,18 +109,6 @@ sudo dnf install -y nvidia-container-toolkit
 Addtional Links without any promis of relevance:
 - https://a-nau.github.io/blog/2024-03-17-VS_Code_Devcontainer/
 
-# Worskpace Overview:
-
-worskpace_root
-  |_.devcontainer/
-  |_.vscode/
-  |_.git
-  |_README.md
-  |_src/
-    |_awsome_pkg
-
-- "Workpace Root" or "worskacpe directory" refers to the root or origin of this workspace
-- `.devcontainer`: Used for devcontainer[here](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) configuration, contains a configuration file and  
 
 ## Where to get good base docker images from:
 Most of the time, a good base image is availbe from ROS, Nvidia or another organisition that will make life easier. 
