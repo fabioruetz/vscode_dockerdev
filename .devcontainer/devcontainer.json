@@ -1,6 +1,6 @@
 // For format details, see https://aka.ms/devcontainer.json.
 {
-	"name": "dockerdevcontaner",
+	"name": "devcontainer",
 	"build": {
 		"dockerfile": "Dockerfile",
 		"context": "..",
@@ -15,7 +15,7 @@
 				"files.insertFinalNewline": true,
 				"includePath": [
 					"${default}",
-					"/opt/ros/noetic/include",
+					// "/opt/ros/noetic/include",
 				],
 				"python.formatting.provider": "black",
 				"python.linting.enabled": true,
@@ -42,7 +42,6 @@
 		"type=bind,source=/etc/localtime,destination=/etc/localtime,readonly",
 		"type=bind,source=/tmp/.X11-unix,destination=/tmp/.X11-unix",
 		"type=bind,source=${localEnv:XAUTHORITY},destination=/home/vscode/.Xauthority",
-		"type=bind,source=/home/${localEnv:USER}/data,destination=/data",
 	],
 	"containerEnv": {
 		"DISPLAY": "${localEnv:DISPLAY}",
@@ -65,6 +64,6 @@
 		"docker-devcontainer"
 	],
 	"remoteUser": "ros",
-	"workspaceFolder": "/app",
+	"workspaceFolder": "/worskpace",
 	"workspaceMount": "source=${localWorkspaceFolder},target=/docker_dev,type=bind",
 }
